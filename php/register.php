@@ -2,14 +2,14 @@
 
 require('dbconfig.php');
 
-$first_name = $_POST['first_name'];
-$last_name = $_POST['last_name'];
+$first_name = $_POST['firstname'];
+$last_name = $_POST['lastname'];
 $gender = $_POST['gender'];
 
-$stmt = $conn->prepare("INSERT INTO users (first_name, last_name, gender)
-    VALUES (:first_name, :last_name, :gender)");
-$stmt->bindParam(':first_name', $first_name);
-$stmt->bindParam(':last_name', $last_name);
+$stmt = $conn->prepare("INSERT INTO users (firstname, lastname, gender)
+    VALUES (:firstname, :lastname, :gender)");
+$stmt->bindParam(':firstname', $first_name);
+$stmt->bindParam(':lastname', $last_name);
 $stmt->bindParam(':gender', $gender);
 $stmt->execute();
 

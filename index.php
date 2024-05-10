@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,6 @@
     </style>
     <?php require('php/dbconfig.php'); ?>
 </head>
-
 <body>
     <h1>Users</h1>
     <a href="registration.php">
@@ -23,23 +21,31 @@
             <tr>
                 <th>Name</th>
                 <th>Gender</th>
+                <th>created_at</th>
+                <th>updated_at</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             <?php
-            $stmt = $conn->prepare("SELECT id, first_name, last_name, gender FROM users");
+            $stmt = $conn->prepare("SELECT id, firstname, lastname, gender, created_at, updated_at FROM users");
             $stmt->execute();
             while ($row = $stmt->fetch()) {
                 echo "<tr>";
                 echo "<td>" .
-                    $row["first_name"] . " " . $row["last_name"] .
+                    $row["firstname"] . " " . $row["lastname"] .
                     "</td>";
                 echo "<td>" .
                     $row["gender"] .
                     "</td>";
                 echo "<td>" .
-                    "<a href='edit.php?id=" . $row["id"] . "'>Edit</a>" .
+                    $row["created_at"] .
+                    "</td>";
+                echo "<td>" .
+                    $row["updated_at"] .
+                    "</td>";
+                echo "<td>" .
+                    "<a href='update.php?id=" . $row["id"] . "&firstname=" . $row["firstname"] . "&lastname=" . $row["lastname"] . "&gender=" . $row["gender"] . "'>Edit</a>" .
                     "<a href='php/delete-user.php?id=" . $row["id"] . "'>Delete</a>" .
                     "</td>";
             }
@@ -47,5 +53,4 @@
         </tbody>
     </table>
 </body>
-
 </html>

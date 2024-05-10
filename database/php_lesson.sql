@@ -27,10 +27,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `dbusers` (
   `id` int(11) NOT NULL,
-  `first_name` text NOT NULL,
-  `last_name` text NOT NULL,
+  `firstname` text NOT NULL,
+  `lastname` text NOT NULL,
   `gender` enum('Male','Female','Others','') NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT NULL
@@ -43,7 +43,7 @@ CREATE TABLE `users` (
 --
 -- Indexes for table `users`
 --
-ALTER TABLE `users`
+ALTER TABLE `dbusers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -53,7 +53,7 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE `users`
+ALTER TABLE `dbusers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 

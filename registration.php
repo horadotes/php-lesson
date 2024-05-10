@@ -13,24 +13,24 @@
 </head>
 
 <body>
+    <a href="index.php">
+        <button>Back</button>
+    </a>
     <form action="php/register.php" method="POST">
-        <a href="index.php">
-            <button>Back</button>
-        </a>
         <div>
             <h1>Form Registration</h1>
         </div>
         <div>
-            <label for="first_name">First Name</label> <br />
-            <input type="text" id="first_name" name="first_name" placeholder="First name" autocomplete="false">
+            <label for="firstname">First Name</label> <br />
+            <input type="text" id="firstname" name="firstname" placeholder="First name" autocomplete="false">
         </div>
         <div>
-            <label for="last_name">Last Name</label> <br />
-            <input type="text" id="last_name" name="last_name" placeholder="Last name" autocomplete="false">
+            <label for="lastname">Last Name</label> <br />
+            <input type="text" id="lastname" name="lastname" placeholder="Last name" autocomplete="false">
         </div>
         <div>
             <label for="gender">Gender</label> <br />
-            <input type="radio" id="gender" name="gender" value="Male"> Male
+            <input type="radio" id="gender" name="gender" value="Male" checked> Male
             <input type="radio" id="genderFemale" name="gender" value="Female"> Female
             <input type="radio" id="genderOthers" name="gender" value="Others"> Others
         </div>
